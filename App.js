@@ -6,7 +6,8 @@ import {
   Button,
   TextInput,
   ScrollView,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from "react-native";
 
 export default function App() {
@@ -54,7 +55,9 @@ export default function App() {
       <FlatList 
         data={people}
         renderItem={({item}) => (
-          <Text style={styles.listText}>{item}</Text>
+          <TouchableOpacity onPress={() => console.log(item)}>
+            <Text style={styles.listText}>{item}</Text>
+          </TouchableOpacity>
         )}
       />
     </View>
