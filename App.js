@@ -6,6 +6,7 @@ import {
   Button,
   TextInput,
   ScrollView,
+  FlatList
 } from "react-native";
 
 export default function App() {
@@ -49,6 +50,13 @@ export default function App() {
           })}
         </View>
       </ScrollView>
+
+      <FlatList 
+        data={people}
+        renderItem={({item}) => (
+          <Text style={styles.listText}>{item}</Text>
+        )}
+      />
     </View>
   );
 }
