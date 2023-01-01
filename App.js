@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  FlatList,
   StyleSheet,
   Text,
   View,
@@ -16,7 +17,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
+      <View style={styles.content}>
+        <View style={styles.list}>
+          <FlatList 
+            data={notes}
+            renderItem={({ item }) => (
+              <Text>{item.title}</Text>
+            )}
+          />
+        </View>
+      </View>
     </View>
   );
 }
