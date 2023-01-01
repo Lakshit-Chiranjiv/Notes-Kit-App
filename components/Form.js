@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     StyleSheet,
     Text,
@@ -7,6 +8,10 @@ import {
   } from "react-native";
 
 const Form = () => {
+
+    const [title, setTitle] = useState('')
+    const [content, setContent] = useState('')
+
   return (
     <View style={styles.form}>
         <Text style={styles.title}>Enter note</Text>
