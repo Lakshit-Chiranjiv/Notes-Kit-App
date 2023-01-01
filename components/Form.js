@@ -15,8 +15,8 @@ const Form = () => {
   return (
     <View style={styles.form}>
         <Text style={styles.title}>Enter note</Text>
-        <TextInput style={styles.input} placeholder="Title"/>
-        <TextInput style={styles.input} placeholder="Content"/>
+        <TextInput style={styles.input} placeholder="Title" value={title} onChangeText={(val) => setTitle(val)}/>
+        <TextInput style={styles.input} placeholder="Content" value={content} onChangeText={(val) => setContent(val)}/>
         <Button title="Add" color="#40c2ac"/>
     </View>
   )
