@@ -1,14 +1,15 @@
 import {
     StyleSheet,
     Text,
-    View,
+    TouchableOpacity
   } from "react-native";
 
 const NoteItem = ({note}) => {
   return (
-    <View style={styles.noteItem}>
+    <TouchableOpacity style={styles.noteItem}>
         <Text style={styles.noteTitle}>{note.title}</Text>
-    </View>
+        <Text>{note.content}</Text>
+    </TouchableOpacity>
   )
 }
 
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     noteItem: {
         padding: 16,
         marginTop: 16,
-        backgroundColor: '#40c2ac',
+        backgroundColor: '#8cfab6',
         borderColor: '#000',
         borderWidth: 1,
     },
