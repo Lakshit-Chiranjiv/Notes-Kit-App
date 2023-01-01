@@ -5,6 +5,7 @@ import {
   Text,
   View,
 } from "react-native";
+import Form from "./components/Form";
 import Header from "./components/Header";
 import NoteItem from "./components/NoteItem";
 
@@ -27,6 +28,7 @@ export default function App() {
     <View style={styles.container}>
       <Header/>
       <View style={styles.content}>
+        <Form/>
         <View style={styles.list}>
           <FlatList 
             data={notes}
