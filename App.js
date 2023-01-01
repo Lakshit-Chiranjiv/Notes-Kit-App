@@ -4,6 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import Form from "./components/Form";
 import Header from "./components/Header";
@@ -31,24 +33,30 @@ export default function App() {
         ...prevNotes
       ]
     })
+    Keyboard.dismiss();
   }
 
   return (
-    <View style={styles.container}>
-      <Header/>
-      <View style={styles.content}>
-        <Form submitHandler={noteSubmitHandler}/>
-        <View style={styles.list}>
-          <FlatList 
-            data={notes}
-            renderItem={({ item }) => (
-              <NoteItem note={item} pressHandler={notePressHandler}/>
-            )}
-            keyExtractor={(item) => item.key}
-          />
+    <TouchableWithoutFeedback onPress={() => {
+      Keyboard.dismiss();
+      console.log('dismissed keyboard');
+    } }>
+      <View style={styles.container}>
+        <Header/>
+        <View style={styles.content}>
+          <Form submitHandler={noteSubmitHandler}/>
+          <View style={styles.list}>
+            <FlatList 
+              data={notes}
+              renderItem={({ item }) => (
+                <NoteItem note={item} pressHandler={notePressHandler}/>
+              )}
+              keyExtractor={(item) => item.key}
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 
