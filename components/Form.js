@@ -7,7 +7,7 @@ import {
     Button
   } from "react-native";
 
-const Form = () => {
+const Form = ({submitHandler}) => {
 
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -17,7 +17,13 @@ const Form = () => {
         <Text style={styles.title}>Enter note</Text>
         <TextInput style={styles.input} placeholder="Title" value={title} onChangeText={(val) => setTitle(val)}/>
         <TextInput style={styles.input} placeholder="Content" value={content} onChangeText={(val) => setContent(val)}/>
-        <Button title="Add" color="#40c2ac"/>
+        <Button title="Add" color="#40c2ac" onPress={() => {
+            if(title && content) {
+                submitHandler({title, content})
+                setTitle('')
+                setContent('')
+            }
+        }}/>
     </View>
   )
 }
