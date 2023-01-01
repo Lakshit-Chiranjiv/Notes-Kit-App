@@ -24,6 +24,15 @@ export default function App() {
     })
   }
 
+  const noteSubmitHandler = (note) => {
+    setNotes((prevNotes) => {
+      return [
+        { title: note.title, content: note.content, key: Math.random().toString() },
+        ...prevNotes
+      ]
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Header/>
