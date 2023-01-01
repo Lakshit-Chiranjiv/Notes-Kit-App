@@ -44,6 +44,7 @@ export default function App() {
             renderItem={({ item }) => (
               <NoteItem note={item} pressHandler={notePressHandler}/>
             )}
+            keyExtractor={(item) => item.key}
           />
         </View>
       </View>
