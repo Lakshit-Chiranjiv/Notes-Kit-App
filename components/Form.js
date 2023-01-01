@@ -19,8 +19,7 @@ const Form = () => {
 
 const styles = StyleSheet.create({
     form: {
-        padding: 40,
-        marginTop: 20,
+        marginTop: 10,
     },
 
     title: {
