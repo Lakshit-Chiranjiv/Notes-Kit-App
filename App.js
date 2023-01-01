@@ -37,7 +37,7 @@ export default function App() {
     <View style={styles.container}>
       <Header/>
       <View style={styles.content}>
-        <Form/>
+        <Form submitHandler={noteSubmitHandler}/>
         <View style={styles.list}>
           <FlatList 
             data={notes}
