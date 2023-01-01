@@ -6,6 +6,7 @@ import {
   View,
 } from "react-native";
 import Header from "./components/Header";
+import NoteItem from "./components/NoteItem";
 
 export default function App() {
 
@@ -24,7 +25,7 @@ export default function App() {
           <FlatList 
             data={notes}
             renderItem={({ item }) => (
-              <Text>{item.title}</Text>
+              <NoteItem note={item}/>
             )}
           />
         </View>
