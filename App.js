@@ -31,7 +31,7 @@ export default function App() {
           <FlatList 
             data={notes}
             renderItem={({ item }) => (
-              <NoteItem note={item}/>
+              <NoteItem note={item} pressHandler={notePressHandler}/>
             )}
           />
         </View>
