@@ -5,6 +5,7 @@ import {
   Text,
   View,
 } from "react-native";
+import Header from "./components/Header";
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Header/>
       <View style={styles.content}>
         <View style={styles.list}>
           <FlatList 
