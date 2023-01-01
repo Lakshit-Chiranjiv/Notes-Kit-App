@@ -17,6 +17,12 @@ export default function App() {
     { title: "Note 4", content: "Content 4", key: "4" },
   ])
 
+  const notePressHandler = (key) => {
+    setNotes((prevNotes) => {
+      return prevNotes.filter(note => note.key != key);
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Header/>
