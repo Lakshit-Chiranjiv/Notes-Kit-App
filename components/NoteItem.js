@@ -4,9 +4,9 @@ import {
     TouchableOpacity
   } from "react-native";
 
-const NoteItem = ({note}) => {
+const NoteItem = ({note, pressHandler}) => {
   return (
-    <TouchableOpacity style={styles.noteItem}>
+    <TouchableOpacity style={styles.noteItem} onPress={() => pressHandler(note.key)}>
         <Text style={styles.noteTitle}>{note.title}</Text>
         <Text>{note.content}</Text>
     </TouchableOpacity>
