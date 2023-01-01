@@ -18,8 +18,7 @@ const styles = StyleSheet.create({
         padding: 16,
         marginTop: 16,
         backgroundColor: '#8cfab6',
-        borderColor: '#000',
-        borderWidth: 1,
+        borderRadius: 10,
     },
 
     noteTitle: {
