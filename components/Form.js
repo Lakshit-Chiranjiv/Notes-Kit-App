@@ -4,7 +4,8 @@ import {
     Text,
     View,
     TextInput,
-    Button
+    Button,
+    Alert
   } from "react-native";
 
 const Form = ({submitHandler}) => {
@@ -22,6 +23,11 @@ const Form = ({submitHandler}) => {
                 submitHandler({title, content})
                 setTitle('')
                 setContent('')
+            }
+            else {
+                Alert.alert('Error', 'Please enter a title and content', [
+                    {text: 'GOT IT', onPress: () => console.log('Alert closed')}
+                ])
             }
         }}/>
     </View>
